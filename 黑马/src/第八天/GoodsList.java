@@ -1,8 +1,8 @@
-package µÚ°ËÌì;
+package test;
 
 public class GoodsList {
-	int id;
-	String name;
-	double proce;
-	double money;
+    int id;
+    String name;
+    double proce;
+    double money;
 }

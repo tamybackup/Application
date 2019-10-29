@@ -1,130 +1,176 @@
-package µÚ°ËÌì;
+package test;
 
 import java.util.*;
 
 
 public class Shopp {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ArrayList<GoodsList> array=new ArrayList<GoodsList>();
-		while(true) {
-			goodsListSystem();
-			goodsInit(array);
-			switch (chooseFunction()) {
-				case 1:
-					//µ÷ÓÃ»õÎïÇåµ¥·½·½·¨
-					goodsList(array);
-					break;
-				case 2:
-					//µ÷ÓÃÌí¼ÓĞÂ»õÎï·½·¨
-					createGoods(array);		
-					break;
-				case 3:
-					//µ÷ÓÃÉ¾³ı»õÎï·½·¨
-					break;
-				case 4:
-					//µ÷ÓÃĞŞ¸Ä»õÎï·½·¨
-					break;
-				case 5:
-					//ÍË³ö
-					return;
-	
-				default:
-					System.out.println("ÇëÊäÈëÕıÈ·µÄĞòºÅ£¡");
-			}
-		}
-		
-	}
-	/*
-	 * ¶¨Òå·½·¨£¬ÊµÏÖÌí¼Ó»õÎï¹¦ÄÜ
-	 * ·µ»ØÖµ£ºÎŞ
-	 * ²ÎÊı£º¼¯ºÏ
-	 */
-	public static void createGoods(ArrayList<GoodsList> array) {
-		System.out.println("ÏÖÔÚÑ¡ÔñµÄÊÇÌí¼Ó»õÎïÏµÍ³");
-		System.out.println("ÇëÊäÈëÄãÒªĞŞ¸ÄÉÌÆ·µÄ±àºÅ£º");
-		Scanner sc=new Scanner(System.in);
-		int id=sc.nextInt();
-		
-		
-		for(int i=0;i<array.size();i++) {
-			GoodsList goodsList=array.get(i);
-			if(goodsList.id==id) {
-				System.out.println("ÇëÊäÈëĞŞ¸ÄµÄÉÌÆ·Ãû³Æ£º");
-				goodsList.name=sc.next();
-				System.out.println("ÇëÊäÈëĞŞ¸ÄµÄÉÌÆ·µ¥¼Û£º");
-				goodsList.proce=sc.nextDouble();
-				return;
-			}
-		}
-		System.out.println("Ã»ÓĞÄãÏëÒªĞŞ¸ÄµÄÉÌÆ·£¡");
-	}
-	
-	/*
-	 * ¶¨Òå·½·¨£¬ÊµÏÖ¹¦ÄÜµÄÑ¡Ôñ
-	 * ·µ»ØÖµ£ºint
-	 * ²ÎÊı£ºÎŞ
-	 * 
-	 * »ñÈ¡ÓÃ»§µÄ¼üÅÌ¼üÈë
-	 */
-	public static int chooseFunction() {
-		Scanner sc=new Scanner(System.in);
-		int choose=sc.nextInt();
-		return choose;
-	}
-	
-	
-	/*
-	 *¶¨Òåº¯Êı£¬ÊµÏÖ¿â´æÏµÍ³µÄÊ×Ò³
-	 *·µ»ØÖµ£ºÎŞ
-	 *²ÎÊı£ºÎŞ 
-	 */
-	public static void goodsListSystem() {
-		System.out.println();
-		System.out.println("==============================ÉÌÆ·¿â´æÏµÍ³==============================");
-		System.out.println("1.»õÎïÇåµ¥	2.Ìí¼ÓĞÂ»õÎï	3.É¾³ı»õÎï	4.ĞŞ¸Ä»õÎï	5.ÍË³ö");
-		System.out.println("ÇëÊäÈëÒª²Ù×÷µÄ¹¦ÄÜĞòºÅ£º");
-	}
-	
-	/*
-	 * ¶¨Òå·½·¨£¬ÊµÏÖ»õÎïÇåµ¥µÄÏÔÊ¾
-	 * ·µ»ØÖµ£ºÎŞ
-	 * ²ÎÊı£º¼¯ºÏ
-	 */
-	public static void goodsList(ArrayList<GoodsList> array) {
-		System.out.println("==============================ÉÌÆ·¿â´æÇåµ¥==============================");
-		System.out.println("ÉÌÆ·±àºÅ"+"    "+"ÉÌÆ·Ãû³Æ"+"             "+"ÉÌÆ·µ¥¼Û");
-		for(int i=0;i<array.size();i++) {
-			GoodsList list=array.get(i);
-			System.out.println(list.id+"    "+list.name+"             "+list.proce);
-		}
-	}
-	
-	/*
-	 * ¶¨Òå·½·¨£¬ÊµÏÖÉÌÆ·µÄ³õÊ¼»¯
-	 * ·µ»ØÖµ£ºÎŞ
-	 * ²ÎÊı£º¼¯ºÏ
-	 */
-	public static void goodsInit(ArrayList<GoodsList> array) {
-		GoodsList gl=new GoodsList();
-		gl.id=9001;
-		gl.name="ÉÙÁêÊÇ";
-		gl.proce=120;
-		
-		GoodsList g2=new GoodsList();
-		g2.id=9002;
-		g2.name="ÉÙÁêÊÇ";
-		g2.proce=120;
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        ArrayList<GoodsList> array=new ArrayList<GoodsList>();
+        goodsInit(array);
+        while(true) {
+            goodsListSystem();
+            switch (chooseFunction()) {
+                case 1:
+                    //è°ƒç”¨è´§ç‰©æ¸…å•æ–¹æ–¹æ³•
+                    goodsList(array);
+                    break;
+                case 2:
+                    //è°ƒç”¨æ·»åŠ æ–°è´§ç‰©æ–¹æ³•
+                    createGoods(array);
+                    break;
+                case 3:
+                    //è°ƒç”¨åˆ é™¤è´§ç‰©æ–¹æ³•
+                    deleteGoods(array);
+                    break;
+                case 4:
+                    //è°ƒç”¨ä¿®æ”¹è´§ç‰©æ–¹æ³•
+                    update(array);
+                    break;
+                case 5:
+                    //é€€å‡º
+                    return;
 
-		GoodsList g3=new GoodsList();
-		g3.id=9003;
-		g3.name="ÉÙÁêÊÇ";
-		g3.proce=120;
-		
-		array.add(gl);
-		array.add(g2);
-		array.add(g3);
-	}
+                default:
+                    System.out.println("è¯·è¾“å…¥æ­£ç¡®çš„åºå·ï¼");
+            }
+        }
+
+    }
+    /*
+        å®šä¹‰æ–¹æ³•ï¼Œå®ç°ä¿®æ”¹è´§ç‰©æ–¹æ³•
+        è¿”å›å€¼ï¼šæ— 
+        å‚æ•°ï¼šé›†åˆ
+     */
+    public static void update(ArrayList<GoodsList> array){
+        System.out.println("ç°åœ¨é€‰æ‹©çš„æ˜¯ä¿®æ”¹è´§ç‰©ç³»ç»Ÿ");
+        System.out.println("è¯·è¾“å…¥ä½ è¦ä¿®æ”¹å•†å“çš„ç¼–å·ï¼š");
+        Scanner sc=new Scanner(System.in);
+        int id=sc.nextInt();
+        for(int i=0;i<array.size();i++) {
+            GoodsList goodsList=array.get(i);
+            if(goodsList.id==id) {
+                System.out.println("è¯·è¾“å…¥ä¿®æ”¹çš„å•†å“åç§°ï¼š");
+                goodsList.name=sc.next();
+                System.out.println("è¯·è¾“å…¥ä¿®æ”¹çš„å•†å“å•ä»·ï¼š");
+                goodsList.proce=sc.nextDouble();
+                System.out.println("ä¿®æ”¹æˆåŠŸï¼");
+                return;
+            }
+        }
+        System.out.println("æ²¡æœ‰ä½ æƒ³è¦ä¿®æ”¹çš„å•†å“ï¼");
+    }
+
+    /*
+        å®šä¹‰æ–¹æ³•ï¼Œå®ç°åˆ é™¤è´§ç‰©æ–¹æ³•
+        è¿”å›å€¼ï¼šæ— 
+        å‚æ•°ï¼šé›†åˆ
+     */
+    public static void deleteGoods(ArrayList<GoodsList> array){
+        System.out.println("ç°åœ¨é€‰æ‹©çš„æ˜¯åˆ é™¤è´§ç‰©ç³»ç»Ÿ");
+        System.out.println("è¯·é€‰æ‹©ä½ è¦åˆ é™¤çš„å•†å“ç¼–å·ï¼š");
+        Scanner sc=new Scanner(System.in);
+        int id=sc.nextInt();
+        for(int i=0;i<array.size();i++) {
+            GoodsList goodsList=array.get(i);
+            if(goodsList.id==id) {
+                array.remove(i);
+                System.out.println("ä¿®æ”¹æˆåŠŸï¼");
+                return;
+            }
+        }
+        System.out.println("æ²¡æœ‰ä½ æƒ³è¦åˆ é™¤çš„å•†å“ç¼–å·ï¼");
+
+    }
+
+    /*
+     * å®šä¹‰æ–¹æ³•ï¼Œå®ç°æ·»åŠ è´§ç‰©åŠŸèƒ½
+     * è¿”å›å€¼ï¼šæ— 
+     * å‚æ•°ï¼šé›†åˆ
+     */
+    public static void createGoods(ArrayList<GoodsList> array) {
+        Scanner sc=new Scanner(System.in);
+        GoodsList gl=new GoodsList();
+        System.out.println("ç°åœ¨é€‰æ‹©çš„æ˜¯æ·»åŠ è´§ç‰©ç³»ç»Ÿ");
+        System.out.println("è¯·è¾“å…¥ä½ è¦æ·»åŠ çš„å•†å“ç¼–å·ï¼š");
+        int id=sc.nextInt();
+        gl.id=id;
+        System.out.println("è¯·è¾“å…¥ä½ è¦æ·»åŠ çš„å•†å“åç§°ï¼š");
+        String name=sc.next();
+        gl.name=name;
+        System.out.println("è¯·è¾“å…¥ä½ è¦æ·»åŠ çš„å•†å“å•ä»·ï¼š");
+        double price=sc.nextDouble();
+        gl.proce=price;
+        array.add(gl);
+        System.out.println("æ·»åŠ æˆåŠŸï¼");
+    }
+
+    /*
+     * å®šä¹‰æ–¹æ³•ï¼Œå®ç°åŠŸèƒ½çš„é€‰æ‹©
+     * è¿”å›å€¼ï¼šint
+     * å‚æ•°ï¼šæ— 
+     *
+     * è·å–ç”¨æˆ·çš„é”®ç›˜é”®å…¥
+     */
+    public static int chooseFunction() {
+        Scanner sc=new Scanner(System.in);
+        int choose=sc.nextInt();
+        return choose;
+    }
+
+
+    /*
+     *å®šä¹‰å‡½æ•°ï¼Œå®ç°åº“å­˜ç³»ç»Ÿçš„é¦–é¡µ
+     *è¿”å›å€¼ï¼šæ— 
+     *å‚æ•°ï¼šæ— 
+     */
+    public static void goodsListSystem() {
+        System.out.println();
+        System.out.println("==============================å•†å“åº“å­˜ç³»ç»Ÿ==============================");
+        System.out.println("1.è´§ç‰©æ¸…å•	2.æ·»åŠ æ–°è´§ç‰©	3.åˆ é™¤è´§ç‰©	4.ä¿®æ”¹è´§ç‰©	5.é€€å‡º");
+        System.out.println("è¯·è¾“å…¥è¦æ“ä½œçš„åŠŸèƒ½åºå·ï¼š");
+    }
+
+    /*
+     * å®šä¹‰æ–¹æ³•ï¼Œå®ç°è´§ç‰©æ¸…å•çš„æ˜¾ç¤º
+     * è¿”å›å€¼ï¼šæ— 
+     * å‚æ•°ï¼šé›†åˆ
+     */
+    public static void goodsList(ArrayList<GoodsList> array) {
+        System.out.println("==============================å•†å“åº“å­˜æ¸…å•==============================");
+        System.out.println("å•†å“ç¼–å·"+"    "+"å•†å“åç§°"+"             "+"å•†å“å•ä»·");
+        for(int i=0;i<array.size();i++) {
+            GoodsList list=array.get(i);
+            System.out.println(list.id+"    "+list.name+"             "+list.proce);
+        }
+    }
+
+    /*
+     * å®šä¹‰æ–¹æ³•ï¼Œå®ç°å•†å“çš„åˆå§‹åŒ–
+     * è¿”å›å€¼ï¼šæ— 
+     * å‚æ•°ï¼šé›†åˆ
+     */
+    public static void goodsInit(ArrayList<GoodsList> array) {
+        GoodsList gl=new GoodsList();
+        gl.id=9001;
+        gl.name="å°‘é™µæ˜¯";
+        gl.proce=120;
+
+        GoodsList g2=new GoodsList();
+        g2.id=9002;
+        g2.name="å°‘é™µæ˜¯";
+        g2.proce=120;
+
+        GoodsList g3=new GoodsList();
+        g3.id=9003;
+        g3.name="å°‘é™µæ˜¯";
+        g3.proce=120;
+
+        array.add(gl);
+        array.add(g2);
+        array.add(g3);
+    }
 
 }
+
